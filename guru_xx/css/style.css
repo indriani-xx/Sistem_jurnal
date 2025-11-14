@@ -1,0 +1,699 @@
+/* style.css */
+:root {
+    --primary: #244fab;
+    --primary-light: #3b82f6;
+    --primary-dark: #1c3b8f;
+    --secondary: #0369a1;
+    --accent: #0ea5e9;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --light: #f8fafc;
+    --dark: #1e293b;
+    --gray: #64748b;
+    --gray-light: #e2e8f0;
+    --border-radius: 12px;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    color: var(--dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, var(--secondary) 100%);
+    z-index: 1;
+}
+
+.hero-section .overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.hero-section h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+/* Date moved to top inside hero section */
+.teacher-name {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: -50px auto 40px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 3;
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: white;
+    padding: 20px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--gray-light);
+}
+
+.top-bar:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Search Form */
+#searchForm {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+#searchInput {
+    width: 100;
+    padding: 12px 20px;
+    border: 2px solid var(--gray-light);
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--light);
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: white;
+}
+
+#searchInput::placeholder {
+    color: var(--gray);
+}
+
+/* Side Buttons */
+.side-btn {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.side-btn a {
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.side-btn a:first-child {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.side-btn a:first-child:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+.side-btn a.btn-danger {
+    background: white;
+    color: var(--error);
+    border: 2px solid var(--gray-light);
+}
+
+.side-btn a.btn-danger:hover {
+    background: var(--error);
+    color: white;
+    border-color: var(--error);
+    transform: translateY(-2px);
+}
+
+/* Table Container */
+.table-container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid var(--gray-light);
+}
+
+.table-container:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.table thead {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+.table thead th {
+    color: white;
+    padding: 18px 16px;
+    text-align: left;
+    font-weight: 600;
+    border: none;
+    position: relative;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table thead th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.table tbody tr {
+    transition: var(--transition);
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background: rgba(37, 99, 235, 0.03);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table tbody td {
+    padding: 16px;
+    border: none;
+    vertical-align: middle;
+    color: var(--dark);
+}
+
+/* Zebra striping for better readability */
+.table tbody tr:nth-child(even) {
+    background-color: #fafbfc;
+}
+
+.table tbody tr:nth-child(even):hover {
+    background: rgba(37, 99, 235, 0.05);
+}
+
+/* Table Actions */
+.table .btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 40px;
+    height: 40px;
+}
+
+.table .btn-warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.table .btn-warning:hover {
+    background: var(--warning);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.table .btn-danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--error);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.table .btn-danger:hover {
+    background: var(--error);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Icons */
+.bx {
+    font-size: 1.1rem;
+}
+
+/* Text Center */
+.text-center {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray);
+    font-style: italic;
+}
+#toggleTable {
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+#toggleTable:hover {
+    background: linear-gradient(135deg, #1976d2, #0d47a1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+}
+
+#toggleTable:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(33, 150, 243, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 240px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .teacher-name {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 15px auto 0;
+        display: inline-block;
+    }
+    
+    .container {
+        margin-top: -30px;
+    }
+    
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #searchForm {
+        min-width: 100%;
+    }
+    
+    .side-btn {
+        justify-content: center;
+    }
+    
+    .table-container {
+        overflow-x: auto;
+        border-radius: 8px;
+    }
+    
+    .table {
+        min-width: 700px;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 14px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 220px;
+        padding: 20px 15px;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .teacher-name {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+    
+    .side-btn {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .side-btn a {
+        width: 100%;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .top-bar {
+        padding: 15px 20px;
+    }
+}
+
+/* Animation for table rows */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.table tbody tr {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+.table tbody tr:nth-child(1) { animation-delay: 0.05s; }
+.table tbody tr:nth-child(2) { animation-delay: 0.1s; }
+.table tbody tr:nth-child(3) { animation-delay: 0.15s; }
+.table tbody tr:nth-child(4) { animation-delay: 0.2s; }
+.table tbody tr:nth-child(5) { animation-delay: 0.25s; }
+.table tbody tr:nth-child(6) { animation-delay: 0.3s; }
+.table tbody tr:nth-child(7) { animation-delay: 0.35s; }
+.table tbody tr:nth-child(8) { animation-delay: 0.4s; }
+
+/* Loading state for AJAX */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-light);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Additional improvements for better visual hierarchy */
+.table tbody td:first-child {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.table tbody td:nth-child(2) {
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+/* Status indicators if needed in the future */
+.status-completed {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.status-pending {
+    color: var(--warning);
+    font-weight: 600;
+}
+
+.status-cancelled {
+    color: var(--error);
+    font-weight: 600;
+}
+/* Improved Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 200px; /* Lebih rendah di tablet */
+        padding: 20px 15px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+    
+    .teacher-name {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 10px auto 0;
+        display: inline-block;
+        font-size: 0.85rem;
+    }
+    
+    .container {
+        margin: -20px auto 25px; /* Kurangi margin negatif */
+    }
+    
+    .top-bar {
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    
+    /* Stack layout untuk mobile */
+    .side-btn {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .side-btn a {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    /* Table improvements for mobile */
+    .table {
+        font-size: 0.85rem;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 12px 8px;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+    
+    /* Hide less important columns on mobile */
+    .table thead th:nth-child(3),
+    .table tbody td:nth-child(3) {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 180px; /* Lebih rendah di mobile */
+        padding: 15px 10px;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.6rem;
+    }
+    
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+    
+    .teacher-name {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .container {
+        margin: -15px auto 20px;
+        padding: 0 10px;
+    }
+    
+    .top-bar {
+        padding: 12px 15px;
+        margin-bottom: 20px;
+    }
+    
+    #searchForm {
+        min-width: 100%;
+    }
+    
+    #searchInput {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    /* Further table optimization for very small screens */
+    .table thead th:nth-child(4),
+    .table tbody td:nth-child(4) {
+        display: none;
+    }
+    
+    .table thead th,
+    .table tbody td {
+        padding: 10px 6px;
+        font-size: 0.8rem;
+    }
+    
+    /* Smaller buttons on mobile */
+    .table .btn {
+        min-width: 35px;
+        height: 35px;
+        padding: 6px 8px;
+    }
+}
+
+/* Alternative: Stack table on very small screens */
+@media (max-width: 360px) {
+    .table-container {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+    }
+    
+    .table, .table thead, .table tbody, .table th, .table td, .table tr {
+        display: block;
+    }
+    
+    .table thead {
+        display: none;
+    }
+    
+    .table tr {
+        margin-bottom: 15px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        padding: 15px;
+    }
+    
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--gray-light);
+    }
+    
+    .table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--primary);
+        margin-right: 10px;
+    }
+    
+    .table td:last-child {
+        border-bottom: none;
+        justify-content: center;
+        gap: 10px;
+        padding-top: 15px;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .side-btn a,
+    .table .btn {
+        min-height: 44px; /* Minimum touch target size */
+    }
+    
+    .table .btn {
+        min-width: 44px;
+        height: 44px;
+    }
+}

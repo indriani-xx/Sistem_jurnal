@@ -1,0 +1,528 @@
+/* style.css untuk Form Tambah Jurnal - VERSI KREATIF */
+:root {
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --primary-dark: #1d4ed8;
+    --secondary: #0f766e;
+    --accent: #14b8a6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --light: #f8fafc;
+    --dark: #1e293b;
+    --dark-muted: #334155;
+    --gray: #64748b;
+    --gray-light: #e2e8f0;
+    --gray-lighter: #f1f5f9;
+    --border-radius: 20px;
+    --shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 35px 70px rgba(0, 0, 0, 0.12);
+    --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: 
+        radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(15, 118, 110, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+        linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    color: var(--dark);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Container utama */
+.container.py-4 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Form Container dengan desain kreatif */
+.form-container {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(30px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 3.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        var(--primary) 0%, 
+        var(--accent) 25%, 
+        var(--secondary) 50%, 
+        var(--accent) 75%, 
+        var(--primary) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: -200% 0; }
+    50% { background-position: 200% 0; }
+}
+
+.form-container:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+}
+
+/* Header Section yang lebih kalem */
+.d-flex.align-items-center.mb-4 {
+    margin-bottom: 3rem !important;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    position: relative;
+}
+
+.d-flex.align-items-center.mb-4::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+    border-radius: 3px;
+}
+
+.card-icon {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    width: 90px;
+    height: 90px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    box-shadow: 
+        0 15px 40px rgba(15, 118, 110, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-icon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    transition: var(--transition);
+}
+
+.card-icon:hover::before {
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+.card-icon:hover {
+    transform: translateY(-5px) rotate(2deg);
+    box-shadow: 
+        0 20px 50px rgba(15, 118, 110, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.card-icon i {
+    color: white;
+    font-size: 2.2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Judul yang lebih kalem dan elegan */
+.page-header {
+    color: var(--dark-muted);
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 0.75rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--secondary), var(--dark-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.text-muted.mb-0 {
+    color: var(--gray) !important;
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+/* Layout Grid untuk Tanggal dan Kelas */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Floating Label Styles yang lebih baik */
+.floating-label {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.floating-label.full-width {
+    grid-column: 1 / -1;
+}
+
+.floating-label .form-control,
+.floating-label .form-select {
+    height: calc(4.5rem + 2px);
+    padding: 1.75rem 1.25rem 0.75rem 1.25rem;
+    border: 2px solid rgba(226, 232, 240, 0.8);
+    border-radius: 16px;
+    font-size: 1.1rem;
+    background: rgba(248, 250, 252, 0.7);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.floating-label .form-control:focus,
+.floating-label .form-select:focus {
+    border-color: var(--secondary);
+    box-shadow: 
+        0 0 0 4px rgba(15, 118, 110, 0.1),
+        0 10px 30px rgba(15, 118, 110, 0.15);
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* Textarea yang lebih panjang */
+.floating-label textarea.form-control {
+    height: auto;
+    min-height: 180px;
+    resize: vertical;
+    padding-top: 2rem;
+    line-height: 1.6;
+}
+
+.floating-label textarea.form-control:focus {
+    min-height: 200px;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.4rem 1.25rem;
+    pointer-events: none;
+    transition: var(--transition);
+    color: var(--gray);
+    font-size: 1.05rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.floating-label label i {
+    width: 18px;
+    text-align: center;
+    color: var(--secondary);
+    transition: var(--transition);
+}
+
+.floating-label .form-control:focus ~ label i,
+.floating-label .form-control:not(:placeholder-shown) ~ label i,
+.floating-label .form-select:focus ~ label i,
+.floating-label .form-select:not([value=""]):valid ~ label i {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+.floating-label .form-control:focus ~ label,
+.floating-label .form-control:not(:placeholder-shown) ~ label,
+.floating-label .form-select:focus ~ label,
+.floating-label .form-select:not([value=""]):valid ~ label {
+    top: -1rem;
+    left: 1rem;
+    font-size: 0.9rem;
+    color: var(--secondary);
+    background: white;
+    padding: 0 1rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(15, 118, 110, 0.1);
+    border-radius: 10px;
+}
+
+/* Select dropdown styling */
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%230f766e'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m19 9-7 7-7-7'/%3e%3c/svg%3e");
+    background-position: right 1.25rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25em;
+}
+
+/* Button Styles yang lebih modern */
+.d-flex.justify-content-between.mt-4 {
+    margin-top: 3.5rem !important;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
+    position: relative;
+}
+
+.btn {
+    padding: 1.25rem 3rem;
+    border: none;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 1.15rem;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    min-height: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: var(--transition);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #64748b, #475569);
+    color: white;
+    box-shadow: 0 8px 25px rgba(100, 116, 139, 0.3);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #475569, #374151);
+    color: white;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(100, 116, 139, 0.4);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    color: white;
+    box-shadow: 0 8px 30px rgba(15, 118, 110, 0.4);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--accent), var(--secondary));
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(15, 118, 110, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .form-container {
+        padding: 3rem;
+    }
+    
+    .page-header {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        padding: 30px 15px;
+    }
+    
+    .form-container {
+        padding: 2.5rem;
+    }
+    
+    .page-header {
+        font-size: 2rem;
+    }
+    
+    .card-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .card-icon i {
+        font-size: 2rem;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+    
+    .form-container {
+        padding: 2rem;
+        border-radius: 16px;
+    }
+    
+    .d-flex.align-items-center.mb-4 {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .ms-3 {
+        margin-left: 0 !important;
+    }
+    
+    .page-header {
+        font-size: 1.8rem;
+    }
+    
+    .card-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .card-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .floating-label .form-control,
+    .floating-label .form-select {
+        height: calc(4rem + 2px);
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 1rem 2.5rem;
+        min-height: 65px;
+        font-size: 1.1rem;
+    }
+    
+    .d-flex.justify-content-between.mt-4 {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .d-flex.justify-content-between.mt-4 .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 1.5rem;
+        border-radius: 14px;
+    }
+    
+    .page-header {
+        font-size: 1.6rem;
+    }
+    
+    .text-muted.mb-0 {
+        font-size: 1rem;
+    }
+    
+    .floating-label {
+        margin-bottom: 1.5rem;
+    }
+    
+    .floating-label .form-control,
+    .floating-label .form-select {
+        height: calc(3.5rem + 2px);
+        padding: 1.5rem 1rem 0.5rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .floating-label textarea.form-control {
+        min-height: 150px;
+    }
+    
+    .btn {
+        padding: 0.875rem 2rem;
+        min-height: 60px;
+        font-size: 1rem;
+        border-radius: 14px;
+    }
+}
+
+/* Animation untuk form elements */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container {
+    animation: slideInUp 0.8s ease-out;
+}
+
+.form-grid,
+.floating-label {
+    animation: slideInUp 0.8s ease-out both;
+}
+
+.form-grid { animation-delay: 0.2s; }
+.floating-label:nth-child(1) { animation-delay: 0.3s; }
+.floating-label:nth-child(2) { animation-delay: 0.4s; }
+.floating-label:nth-child(3) { animation-delay: 0.5s; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-lighter);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
